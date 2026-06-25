@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <section id="contacto" className="section contact-section">
       <div className="container grid contact-grid">
-        
+
         <div className="contact-info-panel animate-fade-in">
           <h2 className="contact-title">
             Ponte en Contacto con <span className="text-gradient-orange">Nosotros</span>
@@ -22,7 +22,7 @@ export default function Contact() {
               </div>
               <div className="contact-text">
                 <h4>Teléfono de Ventas</h4>
-                <p>+51 922 420 881 (Atención Directa)</p>
+                <p>+51 927 272 678 (Atención Directa)</p>
               </div>
             </div>
 

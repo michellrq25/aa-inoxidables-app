@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { useQuote } from '../../../context/QuoteContext';
 import { X, Trash2, MessageSquareShare, ShoppingBag, Plus, Minus } from 'lucide-react';

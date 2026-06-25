@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { Settings, Wrench, ShieldAlert, CheckCircle, PhoneCall } from 'lucide-react';
 import './Services.css';
@@ -27,14 +29,14 @@ export default function Services() {
 
   const handleWhatsAppSend = () => {
     const text = `*SOLICITUD DE SERVICIO TÉCNICO - A&A Inoxidables*\n\n` +
-                 `*Cliente:* ${formData.name}\n` +
-                 `*Teléfono:* ${formData.phone}\n` +
-                 `*Equipo:* ${formData.equipment}\n` +
-                 `*Tipo de Servicio:* ${formData.serviceType === 'preventive' ? 'Mantenimiento Preventivo' : 'Reparación / Correctivo'}\n` +
-                 `*Detalle:* ${formData.description || 'Sin comentarios adicionales.'}`;
-    
+      `*Cliente:* ${formData.name}\n` +
+      `*Teléfono:* ${formData.phone}\n` +
+      `*Equipo:* ${formData.equipment}\n` +
+      `*Tipo de Servicio:* ${formData.serviceType === 'preventive' ? 'Mantenimiento Preventivo' : 'Reparación / Correctivo'}\n` +
+      `*Detalle:* ${formData.description || 'Sin comentarios adicionales.'}`;
+
     const encoded = encodeURIComponent(text);
-    window.open(`https://wa.me/51922420881?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/51927272678?text=${encoded}`, '_blank');
   };
 
   return (
@@ -89,14 +91,14 @@ export default function Services() {
                   <Wrench size={20} style={{ color: 'var(--accent-orange)' }} /> Solicitar Visita Técnica
                 </h3>
                 <p className="form-subtitle">Completa el formulario para que un especialista se contacte contigo de inmediato.</p>
-                
+
                 <form className="service-form" onSubmit={handleSubmit}>
                   <div className="form-group">
                     <label>Nombre Completo / Empresa *</label>
-                    <input 
-                      type="text" 
-                      name="name" 
-                      placeholder="Ej. Restaurant El Padrino" 
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Ej. Restaurant El Padrino"
                       required
                       value={formData.name}
                       onChange={handleChange}
@@ -105,10 +107,10 @@ export default function Services() {
 
                   <div className="form-group">
                     <label>Número de WhatsApp / Teléfono *</label>
-                    <input 
-                      type="tel" 
-                      name="phone" 
-                      placeholder="Ej. +51 987654321" 
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Ej. +51 987654321"
                       required
                       value={formData.phone}
                       onChange={handleChange}
@@ -117,10 +119,10 @@ export default function Services() {
 
                   <div className="form-group">
                     <label>Equipo que requiere servicio *</label>
-                    <input 
-                      type="text" 
-                      name="equipment" 
-                      placeholder="Ej. Freidora de Papas 2 pozas / Exhibidora de pasteles" 
+                    <input
+                      type="text"
+                      name="equipment"
+                      placeholder="Ej. Freidora de Papas 2 pozas / Exhibidora de pasteles"
                       required
                       value={formData.equipment}
                       onChange={handleChange}
@@ -138,9 +140,9 @@ export default function Services() {
 
                   <div className="form-group">
                     <label>Describe la falla o requerimiento</label>
-                    <textarea 
-                      name="description" 
-                      rows="4" 
+                    <textarea
+                      name="description"
+                      rows="4"
                       placeholder="Escribe brevemente el problema (Ej. No enciende piloto, no congela bien...)"
                       value={formData.description}
                       onChange={handleChange}
@@ -162,7 +164,7 @@ export default function Services() {
                 <button onClick={handleWhatsAppSend} className="btn btn-cyan">
                   <PhoneCall size={18} /> Coordinar por WhatsApp
                 </button>
-                <button onClick={() => { setIsSubmitted(false); setFormData({name:'', phone:'', equipment:'', serviceType:'preventive', description:''}); }} className="btn btn-secondary" style={{ marginTop: '0.5rem' }}>
+                <button onClick={() => { setIsSubmitted(false); setFormData({ name: '', phone: '', equipment: '', serviceType: 'preventive', description: '' }); }} className="btn btn-secondary" style={{ marginTop: '0.5rem' }}>
                   Volver al formulario
                 </button>
               </div>

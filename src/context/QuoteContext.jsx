@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const QuoteContext = createContext();
@@ -11,15 +13,27 @@ export const useQuote = () => {
 };
 
 export const QuoteProvider = ({ children }) => {
-  const [quoteItems, setQuoteItems] = useState(() => {
-    const saved = localStorage.getItem('aa_quote_items');
-    return saved ? JSON.parse(saved) : [];
-  });
+  const [quoteItems, setQuoteItems] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('aa_quote_items', JSON.stringify(quoteItems));
-  }, [quoteItems]);
+    const saved = localStorage.getItem('aa_quote_items');
+    if (saved) {
+      try {
+        setQuoteItems(JSON.parse(saved));
+      } catch (e) {
+        console.error('Error parsing quote items:', e);
+      }
+    }
+    setIsLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem('aa_quote_items', JSON.stringify(quoteItems));
+    }
+  }, [quoteItems, isLoaded]);
 
   const addToQuote = (product) => {
     setQuoteItems((prevItems) => {

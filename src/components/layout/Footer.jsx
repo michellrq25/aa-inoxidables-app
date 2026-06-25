@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { Flame } from 'lucide-react';
 import './Footer.css';
@@ -38,7 +40,7 @@ export default function Footer() {
             <ul className="footer-links">
               <li><span style={{ color: 'var(--text-secondary)' }}>Túpac Amaru 159, Villa María del Triunfo</span></li>
               <li><span style={{ color: 'var(--text-secondary)' }}>Lima, Perú</span></li>
-              <li><span style={{ color: 'var(--text-secondary)' }}>Telf: +51 922 420 881</span></li>
+              <li><span style={{ color: 'var(--text-secondary)' }}>Telf: +51 927 272 678</span></li>
             </ul>
           </div>
         </div>

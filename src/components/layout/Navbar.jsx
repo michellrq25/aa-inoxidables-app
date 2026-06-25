@@ -1,7 +1,8 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { useQuote } from '../../context/QuoteContext';
 import { ShoppingCart, Menu, X } from 'lucide-react';
-import logoImg from '../../assets/logo.png';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -27,7 +28,7 @@ export default function Navbar() {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         <a href="#inicio" className="navbar-logo" onClick={closeMobileMenu}>
-          <img src={logoImg} alt="A&A Inoxidables Logo" className="navbar-logo-img" />
+          <img src="/logo.png" alt="A&A Inoxidables Logo" className="navbar-logo-img" />
           A&A <span>Inoxidables</span>
         </a>
 

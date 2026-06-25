@@ -1,6 +1,5 @@
 import React from 'react';
 import { Award, ShieldCheck, Settings } from 'lucide-react';
-import heroImg from '../../../assets/hero_kitchen.png';
 import './Hero.css';
 
 export default function Hero() {
@@ -8,7 +7,7 @@ export default function Hero() {
     <section id="inicio" className="hero">
       <div 
         className="hero-bg-image" 
-        style={{ backgroundImage: `url(${heroImg})` }}
+        style={{ backgroundImage: 'url("/hero_kitchen.png")' }}
         role="presentation"
       ></div>
       <div className="hero-bg-overlay"></div>

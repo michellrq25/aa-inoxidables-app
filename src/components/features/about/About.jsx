@@ -1,6 +1,5 @@
 import React from 'react';
 import { ShieldCheck, Ruler, Users, Award } from 'lucide-react';
-import aboutImg from '../../../assets/custom_fabrication.png';
 import './About.css';
 
 export default function About() {
@@ -10,7 +9,7 @@ export default function About() {
         
         <div className="about-image-wrapper animate-fade-in">
           <img 
-            src={aboutImg} 
+            src="/custom_fabrication.png" 
             alt="Taller de fabricación A&A Inoxidables" 
             className="about-img"
           />

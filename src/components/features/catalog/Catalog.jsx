@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { useQuote } from '../../../context/QuoteContext';
 import { Search, Flame, Shield, Ruler, Sparkles, Check } from 'lucide-react';
