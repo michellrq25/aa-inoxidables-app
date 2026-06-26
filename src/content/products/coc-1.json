@@ -1,0 +1,22 @@
+{
+  "id": "coc-1",
+  "name": "Cocina Industrial de 4 Hornillas",
+  "category": "coccion",
+  "desc": "Cocina industrial de alto rendimiento fabricada íntegramente en acero inoxidable AISI 304. Quemadores en fierro fundido y bandeja recolectora.",
+  "specs": [
+    {
+      "label": "Material",
+      "val": "Acero Inoxidable AISI 304"
+    },
+    {
+      "label": "Quemadores",
+      "val": "4 de alta potencia (30,000 BTU/h)"
+    },
+    {
+      "label": "Parrillas",
+      "val": "Fierro fundido de 40x40 cm"
+    }
+  ],
+  "blueprint": "coccion",
+  "image": ""
+}

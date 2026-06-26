@@ -38,15 +38,15 @@ export default function Footer() {
           <div className="footer-links-col">
             <h4>Nuestra Planta</h4>
             <ul className="footer-links">
-              <li><span style={{ color: 'var(--text-secondary)' }}>Túpac Amaru 159, Villa María del Triunfo</span></li>
-              <li><span style={{ color: 'var(--text-secondary)' }}>Lima, Perú</span></li>
-              <li><span style={{ color: 'var(--text-secondary)' }}>Telf: +51 927 272 678</span></li>
+              <li><span>Túpac Amaru 159, Hogar Policial, Villa María del Triunfo</span></li>
+              <li><span>Lima, Perú</span></li>
+              <li><span>Telf: +51 927 272 678</span></li>
             </ul>
           </div>
         </div>
 
         <div className="container footer-bottom">
-          <p>© {new Date().getFullYear()} A&A Inoxidables SAC. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear() === 2026 ? '2026' : `2026 - ${new Date().getFullYear()}`} A&A Inoxidables SAC. Todos los derechos reservados.</p>
           <p>Desarrollado por <strong>GalactiCode Devs</strong></p>
         </div>
       </footer>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Ruler, Users, Award } from 'lucide-react';
+import { ShieldCheck, Ruler, Users } from 'lucide-react';
 import './About.css';
 
 export default function About() {

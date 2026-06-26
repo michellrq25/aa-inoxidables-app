@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useQuote } from '../../../context/QuoteContext';
+import { useQuote } from '../../../context/useQuote';
 import { X, Trash2, MessageSquareShare, ShoppingBag, Plus, Minus } from 'lucide-react';
 import './QuoteCart.css';
 
@@ -34,7 +34,7 @@ export default function QuoteCart() {
     }
 
     let productListText = '';
-    quoteItems.forEach((item, index) => {
+    quoteItems.forEach((item) => {
       productListText += `🔹 *[${item.quantity}] x ${item.name}* (Cat: ${item.blueprint.toUpperCase()})\n`;
     });
 

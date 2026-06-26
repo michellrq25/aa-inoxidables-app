@@ -1,0 +1,22 @@
+{
+  "id": "ref-1",
+  "name": "Exhibidora Refrigerada de Pastelería (Curva)",
+  "category": "refrigeracion",
+  "desc": "Exhibidora de pasteles y postres con vidrios templados curvos. Sistema de desempañador automático y luces LED cálidas.",
+  "specs": [
+    {
+      "label": "Sistema de Frío",
+      "val": "Frío Forzado (No Frost)"
+    },
+    {
+      "label": "Controlador",
+      "val": "Digital programable (Carel/Dixell)"
+    },
+    {
+      "label": "Temperatura",
+      "val": "+2°C a +8°C"
+    }
+  ],
+  "blueprint": "refrigeracion",
+  "image": ""
+}

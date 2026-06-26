@@ -1,0 +1,22 @@
+{
+  "id": "ref-2",
+  "name": "Mesa de Conservación Refrigerada (2 Puertas)",
+  "category": "refrigeracion",
+  "desc": "Mesa de trabajo superior con refrigerador inferior. Optimiza el espacio de preparación en cocinas profesionales.",
+  "specs": [
+    {
+      "label": "Dimensiones",
+      "val": "1.50 x 0.70 x 0.85 m"
+    },
+    {
+      "label": "Compresor",
+      "val": "Embraco de 1/3 HP ecológico"
+    },
+    {
+      "label": "Estructura",
+      "val": "Acero inoxidable interior y exterior"
+    }
+  ],
+  "blueprint": "refrigeracion",
+  "image": ""
+}

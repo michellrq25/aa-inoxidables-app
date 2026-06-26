@@ -1,0 +1,22 @@
+{
+  "id": "coc-2",
+  "name": "Freidora a Gas de 2 Pozas (20L c/u)",
+  "category": "coccion",
+  "desc": "Freidora de papas industrial con doble poza para freír a alta velocidad. Termostato de precisión y pilotos de seguridad.",
+  "specs": [
+    {
+      "label": "Capacidad",
+      "val": "40 Litros totales (20L por poza)"
+    },
+    {
+      "label": "Sistema",
+      "val": "A gas con termopila de seguridad"
+    },
+    {
+      "label": "Canastillas",
+      "val": "4 canastillas niqueladas incluidas"
+    }
+  ],
+  "blueprint": "coccion",
+  "image": ""
+}

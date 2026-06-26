@@ -1,0 +1,32 @@
+backend:
+  name: github
+  repo: michellrq25/aa-inoxidables-app
+  branch: main
+  base_url: https://aa-inoxidables-app.vercel.app
+  auth_endpoint: api/oauth
+local_backend: true
+media_folder: public/uploads
+public_folder: /uploads
+collections:
+  - name: "products"
+    label: "Productos"
+    folder: "src/content/products"
+    create: true
+    slug: "{{slug}}"
+    format: "json"
+    fields:
+      - { label: "ID (ej: coc-4, ref-4)", name: "id", widget: "string" }
+      - { label: "Nombre del Equipo", name: "name", widget: "string" }
+      - { label: "Categoría", name: "category", widget: "select", options: [
+          { label: "Línea de Cocción", value: "coccion" },
+          { label: "Refrigeración", value: "refrigeracion" },
+          { label: "Carpintería Metálica (A Medida)", value: "neutra" },
+          { label: "Equipos Importados", value: "importados" }
+        ] }
+      - { label: "Descripción", name: "desc", widget: "text" }
+      - { label: "Blueprint (Gráfico SVG)", name: "blueprint", widget: "select", options: ["coccion", "refrigeracion", "neutra", "importados"] }
+      - { label: "Imagen del Producto", name: "image", widget: "image", required: false }
+      - { label: "Especificaciones Técnicas", name: "specs", widget: "list", fields: [
+          { label: "Etiqueta (Ej: Material, Capacidad)", name: "label", widget: "string" },
+          { label: "Valor (Ej: Acero AISI 304, 20L)", name: "val", widget: "string" }
+        ] }

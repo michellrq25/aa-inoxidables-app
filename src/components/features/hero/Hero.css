@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   padding-top: 100px;
-  background: radial-gradient(circle at 10% 20%, rgba(9, 13, 22, 0.95) 0%, rgba(17, 24, 39, 0.98) 90%);
+  background: radial-gradient(circle at 10% 20%, var(--bg-primary) 0%, var(--bg-secondary) 90%);
   overflow: hidden;
 }
 
@@ -14,7 +14,7 @@
   right: 0;
   width: 50%;
   height: 100%;
-  background: linear-gradient(90deg, rgba(9, 13, 22, 1) 0%, rgba(9, 13, 22, 0.4) 100%);
+  background: linear-gradient(90deg, var(--bg-primary) 0%, rgba(168, 185, 201, 0.25) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -27,7 +27,7 @@
   height: 100%;
   background-size: cover;
   background-position: center;
-  opacity: 0.35;
+  opacity: 0.55;
   z-index: 0;
   filter: saturate(1.1) brightness(0.9);
 }
@@ -99,10 +99,10 @@
 
 .hero-feature-icon {
   color: var(--accent-cyan);
-  background: rgba(6, 182, 212, 0.1);
+  background: var(--accent-cyan-glow);
   padding: 0.5rem;
   border-radius: 8px;
-  border: 1px solid rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(30, 94, 151, 0.25);
 }
 
 .hero-feature-text h4 {
@@ -132,11 +132,11 @@
   }
   .hero-bg-overlay {
     width: 100%;
-    background: linear-gradient(180deg, rgba(9, 13, 22, 0.8) 0%, rgba(9, 13, 22, 0.98) 100%);
+    background: linear-gradient(180deg, rgba(168, 185, 201, 0.65) 0%, var(--bg-primary) 100%);
   }
   .hero-bg-image {
     width: 100%;
-    opacity: 0.2;
+    opacity: 0.45;
   }
   .hero-title {
     font-size: 2.2rem;

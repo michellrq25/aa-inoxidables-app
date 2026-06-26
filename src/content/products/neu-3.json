@@ -1,0 +1,22 @@
+{
+  "id": "neu-3",
+  "name": "Campana Extractora Mural con Filtros",
+  "category": "neutra",
+  "desc": "Campana extractora de grasa y vapores para cocinas de restaurantes. Filtros de laberinto lavables y canaleta de grasa.",
+  "specs": [
+    {
+      "label": "Filtros",
+      "val": "Laberinto de acero inoxidable"
+    },
+    {
+      "label": "Canaleta",
+      "val": "Colectora perimetral con tapón"
+    },
+    {
+      "label": "Montaje",
+      "val": "Pernos de anclaje de alta seguridad"
+    }
+  ],
+  "blueprint": "neutra",
+  "image": ""
+}

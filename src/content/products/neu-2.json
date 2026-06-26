@@ -1,0 +1,22 @@
+{
+  "id": "neu-2",
+  "name": "Lavadero Industrial de 2 Pozas con Escurridor",
+  "category": "neutra",
+  "desc": "Mesa lavadero para ollas y vajilla pesada con pozas profundas y pestaña posterior antivuelco de agua.",
+  "specs": [
+    {
+      "label": "Pozas",
+      "val": "2 pozas de 50x50x30 cm"
+    },
+    {
+      "label": "Espaldar",
+      "val": "Zócalo sanitario de 10 cm"
+    },
+    {
+      "label": "Accesorios",
+      "val": "Reboses y canastillas de desagüe"
+    }
+  ],
+  "blueprint": "neutra",
+  "image": ""
+}

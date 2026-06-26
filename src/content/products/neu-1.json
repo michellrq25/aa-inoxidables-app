@@ -1,0 +1,22 @@
+{
+  "id": "neu-1",
+  "name": "Mesa de Trabajo Lisa de Acero AISI 304",
+  "category": "neutra",
+  "desc": "Mesa de trabajo esencial para preparación de alimentos. Reforzada con omegas de acero inferiores para evitar pandeo.",
+  "specs": [
+    {
+      "label": "Estructura",
+      "val": "Plancha AISI 304 satinado 1.2mm"
+    },
+    {
+      "label": "Patas",
+      "val": "Tubo redondo de 1 1/2\" regulables"
+    },
+    {
+      "label": "Refuerzo",
+      "val": "Omegas soldadas de alta resistencia"
+    }
+  ],
+  "blueprint": "neutra",
+  "image": ""
+}

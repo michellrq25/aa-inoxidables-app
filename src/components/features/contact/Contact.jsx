@@ -59,15 +59,39 @@ export default function Contact() {
         </div>
 
         <div className="contact-map-panel animate-fade-in">
-          <h3>Nuestra Ubicación</h3>
-          <div className="simulated-map">
-            <div className="map-lines"></div>
-            <div className="map-route"></div>
-            <div className="map-pin">
-              <MapPin size={24} fill="var(--accent-orange)" />
+          <div className="map-card glass-panel">
+            <div className="map-card-header">
+              <span className="map-card-badge">📍 Sede Central</span>
+              <h3>Nuestra Planta y Showroom</h3>
+              <p>Visita nuestro taller de fabricación para ver acabados y materiales en persona.</p>
             </div>
-            <div className="map-label">A&A Inoxidables SAC</div>
-            <div className="map-watermark">Cerca de Av. Pachacútec, VMT</div>
+            
+            <div className="map-container">
+              <iframe
+                src="https://maps.google.com/maps?q=Tupac%20Amaru%20159,%20Hogar%20Policial,%20Villa%20Maria%20del%20Triunfo,%20Lima,%20Peru&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ubicación de A&A Inoxidables SAC"
+              ></iframe>
+            </div>
+
+            <div className="map-card-footer">
+              <div className="map-address-info">
+                <strong>Dirección:</strong> Av. Túpac Amaru 159, Hogar Policial, Villa María del Triunfo
+              </div>
+              <a 
+                href="https://maps.google.com/?q=Tupac%20Amaru%20159,%20Hogar%20Policial,%20Villa%20Maria%20del%20Triunfo,%20Lima,%20Peru" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-secondary btn-map-directions"
+              >
+                🗺️ Cómo Llegar (Google Maps)
+              </a>
+            </div>
           </div>
         </div>
 

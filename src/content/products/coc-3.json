@@ -1,0 +1,22 @@
+{
+  "id": "coc-3",
+  "name": "Parrilla Heavy Duty con Sistema de Elevación",
+  "category": "coccion",
+  "desc": "Parrilla a carbón o gas construida en planchas pesadas de acero inoxidable. Sistema de poleas y manivela para regular la altura.",
+  "specs": [
+    {
+      "label": "Material",
+      "val": "Acero AISI 304 espesor 2mm"
+    },
+    {
+      "label": "Elevación",
+      "val": "Mecanismo con cadena y piñones"
+    },
+    {
+      "label": "Canaleta",
+      "val": "Colectora de grasa frontal"
+    }
+  ],
+  "blueprint": "coccion",
+  "image": ""
+}

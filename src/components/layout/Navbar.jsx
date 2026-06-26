@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { useQuote } from '../../context/QuoteContext';
+import { useQuote } from '../../context/useQuote';
 import { ShoppingCart, Menu, X } from 'lucide-react';
 import './Navbar.css';
 

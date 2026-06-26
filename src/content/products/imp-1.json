@@ -1,0 +1,22 @@
+{
+  "id": "imp-1",
+  "name": "Licuadora Industrial de Volteo 15L",
+  "category": "importados",
+  "desc": "Licuadora para alta producción de jugos, cremas y salsas. Vaso volcable sobre base reforzada para fácil vaciado.",
+  "specs": [
+    {
+      "label": "Vaso",
+      "val": "Capacidad 15 Litros en acero 304"
+    },
+    {
+      "label": "Motor",
+      "val": "1.5 HP monofásico industrial"
+    },
+    {
+      "label": "Cuchilla",
+      "val": "Acero endurecido de alto impacto"
+    }
+  ],
+  "blueprint": "importados",
+  "image": ""
+}

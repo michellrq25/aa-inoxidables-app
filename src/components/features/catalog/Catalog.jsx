@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useQuote } from '../../../context/QuoteContext';
-import { Search, Flame, Shield, Ruler, Sparkles, Check } from 'lucide-react';
+import { useQuote } from '../../../context/useQuote';
+import { Search, Sparkles, Check } from 'lucide-react';
 import './Catalog.css';
 
 // SVG Blueprints for category items to give an engineering/architectural layout look
@@ -231,7 +231,7 @@ const CATEGORIES = [
   { id: 'importados', label: 'Equipos Importados' }
 ];
 
-export default function Catalog() {
+export default function Catalog({ initialProducts = [] }) {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const { addToQuote } = useQuote();
@@ -246,7 +246,9 @@ export default function Catalog() {
     }, 1500);
   };
 
-  const filteredProducts = PRODUCTS.filter((product) => {
+  const displayProducts = initialProducts.length > 0 ? initialProducts : PRODUCTS;
+
+  const filteredProducts = displayProducts.filter((product) => {
     const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory;
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           product.desc.toLowerCase().includes(searchQuery.toLowerCase());
@@ -296,9 +298,13 @@ export default function Catalog() {
             filteredProducts.map((product) => (
               <div key={product.id} className="product-card glass-panel">
                 <div className="product-image-container">
-                  <div className="blueprint-graphics">
-                    {Blueprints[product.blueprint]}
-                  </div>
+                  {product.image ? (
+                    <img src={product.image} alt={product.name} className="product-img" />
+                  ) : (
+                    <div className="blueprint-graphics">
+                      {Blueprints[product.blueprint]}
+                    </div>
+                  )}
                   <span className="product-badge">
                     {CATEGORIES.find(c => c.id === product.category)?.label.split(' ')[0]}
                   </span>

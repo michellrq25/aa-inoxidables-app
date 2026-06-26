@@ -1,0 +1,22 @@
+{
+  "id": "imp-2",
+  "name": "Horno Convector Digital de 4 Bandejas",
+  "category": "importados",
+  "desc": "Horno para pastelería y panadería con turbina de aire bidireccional y entrada de vaporizador automático.",
+  "specs": [
+    {
+      "label": "Bandejas",
+      "val": "4 bandejas de 60x40 cm"
+    },
+    {
+      "label": "Control",
+      "val": "Digital de temperatura y tiempo"
+    },
+    {
+      "label": "Alimentación",
+      "val": "220V trifásico / monofásico"
+    }
+  ],
+  "blueprint": "importados",
+  "image": ""
+}

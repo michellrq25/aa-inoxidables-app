@@ -1,0 +1,22 @@
+{
+  "id": "ref-3",
+  "name": "Cámara Frigorífica Modular para Conservación",
+  "category": "refrigeracion",
+  "desc": "Paneles de poliuretano de alta densidad con revestimiento en acero inoxidable. Ideal para carnes, verduras y lácteos.",
+  "specs": [
+    {
+      "label": "Paneles",
+      "val": "Espesor de 4 pulgadas con encajes"
+    },
+    {
+      "label": "Temperatura",
+      "val": "Rango de -5°C a +5°C"
+    },
+    {
+      "label": "Seguridad",
+      "val": "Cerradura antipánico interna"
+    }
+  ],
+  "blueprint": "refrigeracion",
+  "image": ""
+}
