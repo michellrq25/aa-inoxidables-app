@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useQuote } from '../../../context/useQuote';
-import { Search, Sparkles, Check } from 'lucide-react';
+import { Search, Sparkles, Check, X } from 'lucide-react';
 import './Catalog.css';
 
 // SVG Blueprints for category items to give an engineering/architectural layout look
@@ -236,6 +236,32 @@ export default function Catalog({ initialProducts = [] }) {
   const [searchQuery, setSearchQuery] = useState('');
   const { addToQuote } = useQuote();
   const [addedItems, setAddedItems] = useState({});
+  const [zoomedProduct, setZoomedProduct] = useState(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setZoomedProduct(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  const closeZoom = () => {
+    setZoomedProduct(null);
+    setIsZoomed(false);
+  };
+
+  const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 });
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  const handleMouseMove = (e) => {
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - left) / width) * 100;
+    const y = ((e.clientY - top) / height) * 100;
+    setZoomPos({ x, y });
+  };
 
   const handleAdd = (product) => {
     addToQuote(product);
@@ -297,7 +323,7 @@ export default function Catalog({ initialProducts = [] }) {
           {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <div key={product.id} className="product-card glass-panel">
-                <div className="product-image-container">
+                <div className="product-image-container" onClick={() => setZoomedProduct(product)} title="Click para ampliar">
                   {product.image ? (
                     <img src={product.image} alt={product.name} className="product-img" />
                   ) : (
@@ -347,6 +373,46 @@ export default function Catalog({ initialProducts = [] }) {
           )}
         </div>
       </div>
+
+      {zoomedProduct && (
+        <div className="product-lightbox-overlay" onClick={closeZoom}>
+          <button className="product-lightbox-close" onClick={closeZoom} aria-label="Cerrar ventana">
+            <X size={24} />
+          </button>
+          
+          <div className="product-lightbox-container" onClick={(e) => e.stopPropagation()}>
+            <div className="product-lightbox-content" onClick={closeZoom} title="Click para cerrar">
+              {zoomedProduct.image ? (
+                <div 
+                  className="product-lightbox-image-wrapper"
+                  onMouseMove={handleMouseMove}
+                  onMouseEnter={() => setIsZoomed(true)}
+                  onMouseLeave={() => setIsZoomed(false)}
+                >
+                  <img 
+                    src={zoomedProduct.image} 
+                    alt={zoomedProduct.name} 
+                    className="product-lightbox-img" 
+                    style={{
+                      transformOrigin: `${zoomPos.x}% ${zoomPos.y}%`,
+                      transform: isZoomed ? 'scale(2.2)' : 'scale(1)'
+                    }}
+                  />
+                </div>
+              ) : (
+                <div className="product-lightbox-blueprint">
+                  {Blueprints[zoomedProduct.blueprint]}
+                </div>
+              )}
+            </div>
+            
+            <div className="product-lightbox-footer">
+              <h3 className="product-lightbox-name">{zoomedProduct.name}</h3>
+              <p className="product-lightbox-desc">{zoomedProduct.desc}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "proxy": "decap-server"
   },
   "dependencies": {
     "lucide-react": "^1.21.0",
@@ -16,6 +17,10 @@
   },
   "devDependencies": {
     "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3"
+    "@types/react-dom": "^19.2.3",
+    "decap-server": "^3.9.1"
+  },
+  "overrides": {
+    "postcss": "^8.5.10"
   }
 }

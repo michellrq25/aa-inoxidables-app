@@ -56,21 +56,28 @@ export async function GET(request) {
             provider: provider
           };
           
-          if (window.opener) {
-            // Send handshake signal first
-            window.opener.postMessage("authorizing:" + provider, "*");
+          function receiveMessage(e) {
+            // Only respond if the message is from our opener window to prevent hijacking
+            if (e.source !== window.opener) return;
             
-            // Decap CMS (formerly Netlify CMS) expects the message formatted as:
-            // "authorization:provider:status:JSON_string"
+            // Send the sensitive authorization payload strictly to the verified origin
             window.opener.postMessage(
               "authorization:" + provider + ":success:" + JSON.stringify(message),
-              "*"
+              e.origin
             );
             
-            // Wait 200ms to ensure postMessage events are dispatched before closing
+            window.removeEventListener("message", receiveMessage, false);
+            
+            // Wait a brief moment to ensure the browser dispatches the event before closing
             setTimeout(() => {
               window.close();
             }, 200);
+          }
+          
+          if (window.opener) {
+            window.addEventListener("message", receiveMessage, false);
+            // Send handshake signal to initiate communication
+            window.opener.postMessage("authorizing:" + provider, "*");
           } else {
             console.error('No opener window found');
             window.close();

@@ -113,6 +113,35 @@
   padding-bottom: 75%; /* 4:3 Aspect Ratio */
   background: var(--bg-primary);
   overflow: hidden;
+  cursor: pointer;
+}
+
+/* Hover Zoom Magnifier Lens */
+.product-image-container::after {
+  content: "🔍";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  font-size: 1.4rem;
+  opacity: 0;
+  transition: var(--transition-fast);
+  pointer-events: none;
+  background: rgba(9, 13, 22, 0.65);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.product-image-container:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .product-img {
@@ -232,4 +261,195 @@
 .product-card:hover .product-blueprint-svg {
   transform: scale(1.05);
   color: rgba(255, 255, 255, 0.22);
+}
+
+/* --- LIGHTBOX MODAL --- */
+.product-lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(9, 13, 22, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+.product-lightbox-container {
+  position: relative;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  max-width: 1000px;
+  width: 92%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.product-lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1010;
+  transition: var(--transition-fast);
+}
+
+.product-lightbox-close:hover {
+  background: rgba(249, 115, 22, 0.2);
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+  transform: rotate(90deg);
+}
+
+.product-lightbox-content {
+  width: 100%;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  max-height: 75vh;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.product-lightbox-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 70vh;
+  cursor: zoom-in;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.product-lightbox-img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  transition: transform 0.1s ease-out;
+  pointer-events: none;
+}
+
+.product-lightbox-blueprint {
+  width: 100%;
+  max-width: 600px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background: radial-gradient(circle at center, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.product-lightbox-blueprint .product-blueprint-svg {
+  color: rgba(6, 182, 212, 0.45);
+  filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.25));
+}
+
+.product-lightbox-footer {
+  padding: 1.5rem 2rem;
+  background: var(--bg-secondary);
+  text-align: center;
+}
+
+.product-lightbox-name {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.product-lightbox-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Lightbox Mobile Adjustments */
+@media (max-width: 768px) {
+  .product-lightbox-container {
+    width: 96%;
+    border-radius: 12px;
+  }
+  
+  .product-lightbox-content {
+    padding: 1rem;
+    max-height: 60vh;
+  }
+  
+  .product-lightbox-image-wrapper {
+    max-height: 55vh;
+  }
+  
+  .product-lightbox-img {
+    max-height: 55vh;
+  }
+  
+  .product-lightbox-blueprint {
+    height: 300px;
+    max-width: 100%;
+  }
+  
+  .product-lightbox-close {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .product-lightbox-footer {
+    padding: 1.25rem 1rem;
+  }
+  
+  .product-lightbox-name {
+    font-size: 1.15rem;
+  }
+  
+  .product-lightbox-desc {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
 }

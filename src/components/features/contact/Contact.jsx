@@ -68,7 +68,7 @@ export default function Contact() {
             
             <div className="map-container">
               <iframe
-                src="https://maps.google.com/maps?q=Tupac%20Amaru%20159,%20Hogar%20Policial,%20Villa%20Maria%20del%20Triunfo,%20Lima,%20Peru&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=-12.200318336486816,-76.93632507324219&t=&z=17&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -84,7 +84,7 @@ export default function Contact() {
                 <strong>Dirección:</strong> Av. Túpac Amaru 159, Hogar Policial, Villa María del Triunfo
               </div>
               <a 
-                href="https://maps.google.com/?q=Tupac%20Amaru%20159,%20Hogar%20Policial,%20Villa%20Maria%20del%20Triunfo,%20Lima,%20Peru" 
+                href="https://www.google.com/maps?q=-12.200318336486816,-76.93632507324219&z=17&hl=es" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="btn btn-secondary btn-map-directions"
