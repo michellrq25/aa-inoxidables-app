@@ -57,17 +57,24 @@ export async function GET(request) {
           };
           
           if (window.opener) {
+            // Send handshake signal first
+            window.opener.postMessage("authorizing:" + provider, "*");
+            
             // Decap CMS (formerly Netlify CMS) expects the message formatted as:
             // "authorization:provider:status:JSON_string"
             window.opener.postMessage(
               "authorization:" + provider + ":success:" + JSON.stringify(message),
               "*"
             );
+            
+            // Wait 200ms to ensure postMessage events are dispatched before closing
+            setTimeout(() => {
+              window.close();
+            }, 200);
           } else {
             console.error('No opener window found');
+            window.close();
           }
-          
-          window.close();
         </script>
         <p>Autenticación exitosa. Redirigiendo...</p>
       </body>

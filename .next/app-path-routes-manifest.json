@@ -1,7 +1,0 @@
-{
-  "/api/callback/route": "/api/callback",
-  "/api/oauth/route": "/api/oauth",
-  "/_not-found/page": "/_not-found",
-  "/page": "/",
-  "/admin/page": "/admin"
-}
