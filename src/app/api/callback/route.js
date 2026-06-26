@@ -52,13 +52,17 @@ export async function GET(request) {
           const provider = "github";
           
           const message = {
-            authorizing: true,
-            provider: provider,
-            token: token
+            token: token,
+            provider: provider
           };
           
           if (window.opener) {
-            window.opener.postMessage(JSON.stringify(message), window.opener.origin);
+            // Decap CMS (formerly Netlify CMS) expects the message formatted as:
+            // "authorization:provider:status:JSON_string"
+            window.opener.postMessage(
+              "authorization:" + provider + ":success:" + JSON.stringify(message),
+              "*"
+            );
           } else {
             console.error('No opener window found');
           }
